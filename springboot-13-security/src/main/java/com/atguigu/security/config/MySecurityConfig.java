@@ -44,11 +44,11 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         //super.configure(auth);
         auth.inMemoryAuthentication()
-                .withUser("zhangsan").password("123456").roles("VIP1","VIP2")
+                .withUser("zhangsan").password("{noop}123456").roles("VIP1","VIP2")
                 .and()
-                .withUser("lisi").password("123456").roles("VIP2","VIP3")
+                .withUser("lisi").password("{noop}123456").roles("VIP2","VIP3")
                 .and()
-                .withUser("wangwu").password("123456").roles("VIP1","VIP3");
+                .withUser("wangwu").password("{noop}123456").roles("VIP1","VIP3");
 
     }
 }
